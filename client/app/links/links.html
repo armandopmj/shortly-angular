@@ -1,3 +1,19 @@
 <div id='container'>
-  <!-- Your html here -->
+  <div class='navigation'>
+  <ul>
+    <li><a href='#/links'>All Links</a></li>
+    <li><a href='#/shorten'>Shorten</a></li>
+    <li><a href='#/logout'>Log-Out</a></li>
+  </ul>
+  </div>
+  <input type="text" ng-model="thing">
+  <ul>
+    <li ng-repeat="link in data.links | orderBy:predicate:reverse | filter:thing">
+    <div>
+      <span class="link title"> {{ link.url }} </span>
+      <span class="link title"> <a href=/api/links/{{link.code}}> {{ link.base_url }}/{{ link.code}} </a> </span>
+      <span class="link title"> {{ link.visits }} </span>
+    </div>
+    </li>
+  </ul>
 </div>

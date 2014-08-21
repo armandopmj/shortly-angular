@@ -1,6 +1,18 @@
 <div id='container'>
-<!-- Your code here -->
-
+  <div class='navigation'>
+  <ul>
+    <li><a href='#/links'>All Links</a></li>
+    <li><a href='#/shorten'>Shorten</a></li>
+    <li><a href='#/logout'>Log-Out</a></li>
+  </ul>
+  </div>
+  <h1>The Magic!! (AKA Shortner)</h1>
+  <form name="shortingForm" ng-submit='addLink()'>
+    <input type='url' ng-model='link.url' name='input' required>
+    <span class="error" ng-show="shortingForm.input.$error.required">Required!</span>
+    <span class="error" ng-show="shortingForm.input.$error.url">
+    Not valid url!</span>
+    <button>DO DA MAGIC!!</button>
+  </form>
 </div>
-
 

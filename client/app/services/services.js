@@ -11,19 +11,19 @@ angular.module('shortly.services', [])
    .then(function (resp) {
      return resp.data;
    });
-  }
+  };
 
-  var postLinks = function () {
+  var postLinks = function ( link ) {
    return $http({
      method: 'POST',
-     url: '/api/links'
-     // data: user
+     url: '/api/links',
+     data: link
    })
    .then(function (resp) {
      console.log("RESPONSE IS: ", resp.data);
      return resp.data;
    });
-  }
+  };
 
   return {
     getLinks: getLinks,

@@ -10,6 +10,8 @@ angular.module('shortly.links', [])
          });
   },
 
+  $scope.predicate = '-visits',
+
   $scope.init = function() {
     $scope.getLinks();
   },
