@@ -12,7 +12,6 @@ angular.module('shortly', [
       controller: 'AuthController'
     })
     .when('/signup', {
-      // template: '<div><h1>Home</h1></div>',
       templateUrl: 'app/auth/signup.html',
       controller: 'AuthController'
     })
@@ -28,7 +27,6 @@ angular.module('shortly', [
       redirectTo: '/links'
     })
     // Your code here
-
     // We add our $httpInterceptor into the array
     // of interceptors. Think of it like middleware for your ajax calls
     $httpProvider.interceptors.push('AttatchTokens');
@@ -59,10 +57,9 @@ angular.module('shortly', [
   // and send that token to the server to see if it is a real user or hasn't expired
   // if it's not valid, we then redirect back to signin/signup
   $rootScope.$on('$routeChangeStart', function (evt, next, current) {
-    console.log(next);
     if (next.$$route.controller && next.$$route.controller !== 'AuthController') {
       Auth.isAuth()
-        .then(function () {
+        .then(function( ) {
           console.log('Good to go in!');
         })
         .catch(function () {
